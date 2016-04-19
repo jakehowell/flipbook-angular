@@ -1,0 +1,25 @@
+<div class="what-if">
+    <div class="hero-image what-if">
+        <h1>What If?</h1>
+    </div>
+    <div class="content-section txt-center">
+        <h2>What would you do if you had more time?</h2>
+        <div class="survey-questions wrapper">
+            <div class="survey-question" ng-repeat="question in ctrl.questions track by $index" ng-click="ctrl.toggleChecked(question)">
+                <div class="survey-question-inner">
+                    <span class="icon"><i ng-class="question.icon"></i></span>
+                    <div class="label"><span>{{question.label}}</span></div>
+                    <span class="check"><i ng-class="{'checked' : question.checked}"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-image freedom">
+    </div>
+    <div class="content-section txt-center">
+        <div class="wrapper">
+            <h2>Freedom</h2>
+            <p>Think of all the possibilities and let those dreams take you away again. It's time to grab hold and never let go.</p>
+        </div>
+    </div>
+</div>
