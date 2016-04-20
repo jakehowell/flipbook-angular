@@ -41,6 +41,39 @@
           }
         })
 
+        .state('products', {
+          url: '^/products',
+          views: {
+            'view-main' : {
+              templateUrl: 'products.html',
+              controller: 'ProductsController',
+              controllerAs: 'ctrl'
+            }
+          }
+        })
+
+        .state('company', {
+          url: '^/company',
+          views: {
+            'view-main' : {
+              templateUrl: 'company.html',
+              controller: 'CompanyController',
+              controllerAs: 'ctrl'
+            }
+          }
+        })
+
+        .state('opportunity', {
+          url: '^/opportunity',
+          views: {
+            'view-main' : {
+              templateUrl: 'opportunity.html',
+              controller: 'OpportunityController',
+              controllerAs: 'ctrl'
+            }
+          }
+        })
+
   }])
       
 })();

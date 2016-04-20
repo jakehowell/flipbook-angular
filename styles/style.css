@@ -80,6 +80,18 @@ subnavigation {
   content: '';
   background-image: url('/img/num_1.png');
 }
+.subnav .item:nth-child(2):before {
+  content: '';
+  background-image: url('/img/num_2.png');
+}
+.subnav .item:nth-child(3):before {
+  content: '';
+  background-image: url('/img/num_3.png');
+}
+.subnav .item:nth-child(4):before {
+  content: '';
+  background-image: url('/img/num_4.png');
+}
 .subnav .item.current:after,
 .subnav .item.current:before {
   display: block;
