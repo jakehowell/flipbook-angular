@@ -4,7 +4,10 @@
 		'ui.router',
 
 		'flipBook.config',
-		'flipBook.services'
+		'flipBook.services',
+
+        'ngAudio'
+
 		]);
 	
 	angular.module('flipBook.config', []);

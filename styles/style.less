@@ -33,6 +33,56 @@ h2 {
 	align-items: center;
 	webkit-align-content: center;
 }
+navigation {
+	position: relative;
+	display: block;
+	background: #fff;
+	width: 100%;
+	height: 60px;
+}
+navigation .icon {
+	display: block;
+	width: 40px;
+	height: 30px;
+	overflow: hidden;
+	background-image: url('/img/icon_menu.png');
+	background-size: 100%;
+
+	&.home {
+		background-position: 0 0;
+		margin-right: 10px;
+	}
+	&.rewind {
+		background-position: 0 -30px;
+	}
+	&.play {
+		background-position: 0 -60px;
+	}
+	&.forward {
+		background-position: 0 -90px;
+	}
+	&.notes {
+		background-position: 0 -120px;
+		margin-left: 10px;
+	}
+}
+navigation .audio-controls {
+	display: -webkit-flex;
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+}
+.main-navigation {
+	display: -webkit-flex;
+	display: flex;
+	padding: 5px 10px;
+}
+.main-navigation > span {
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	font-weight: 700;
+}
 subnavigation {
 	display: block;
 	box-sizing: border-box;

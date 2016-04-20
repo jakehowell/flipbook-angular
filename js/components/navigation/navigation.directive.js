@@ -2,59 +2,50 @@
 	'use strict';
 
 	angular.module('flipBook')
-		.directive('navigation', function($state) {
+		.directive('navigation', function() {
 
-			NavigationCtrl.$inject = ['$scope', '$state'];
+			NavigationCtrl.$inject = ['$rootScope', '$scope', '$element', '$attrs', '$state', 'ngAudio', 'IntroService', 'elapsedFilter'];
 
 			return {
 				bindToController: true,
-				controller: SubnavigationCtrl,
+				controller: NavigationCtrl,
 				controllerAs: 'ctrl',
 				restrict: 'E',
 				templateUrl: '/js/components/navigation/navigation.html',
-				scope: {}
+				scope: {
+					'audio' : '=audio'
+				}
 			};
 
-			function NavigationCtrl($scope, $state){
+			function NavigationCtrl($rootScope, $scope, $element, $attrs, $state, ngAudio, IntroService, elapsedFilter){
 
-				$scope.current = $state.current.name;
-				$scope.subNav = [
-					{
-						state: 'whatIf',
-						thumb: '/img/thumb_what-if.jpg',
-						current: false
-					},
-					{
-						state: 'products',
-						thumb: '/img/thumb_products.jpg',
-						current: false
-					},
-					{
-						state: 'company',
-						thumb: '/img/thumb_company.jpg',
-						current: false
-					},
-					{
-						state: 'opportunity',
-						thumb: '/img/thumb_opportunity.jpg',
-						current: false
-					}
-				]
+				$scope.narrator = IntroService.narrator;
+				$scope.audio = ngAudio.load($attrs.audio);
+
+				console.log($scope.audio);
 
 				activate();
 
 				function activate(){
-					getCurrent();
-				}
-
-				function getCurrent(){
-					angular.forEach($scope.subNav, function(value, key, obj){
-						if( value.state == $scope.current ){
-							value.current = true;
-						}
+					if($scope.narrator !== 'none'){
+						$scope.audio.play();
+					}
+					$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
+						$scope.audio.stop();
 					});
 				}
 
+				function play(){
+					$scope.audio.play();
+				}
+
+				function stop(){
+					$scope.audio.stop();
+				}
+
+				function pause(){
+					$scope.audio.pause();
+				}
 			}
 		
 		});
