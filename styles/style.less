@@ -13,6 +13,10 @@ h2 {
 	font-size: 30px;
 	font-weight: 400;
 }
+h3 {
+	font-size: 20px;
+	font-weight: 400;
+}
 .txt-center {
 	text-align: center;
 }
@@ -22,6 +26,50 @@ h2 {
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+.icon-lg {
+	width: 50px;
+	height: 50px;
+}
+.icon-md {
+	width: 40px;
+	height: 40px;
+}
+.icon-sm {
+	width: 30px;
+	height: 30px;
+}
+.icon {
+	display: block;
+	background-image: url('/img/icons.png');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	max-width: 50px;
+	max-height: 50px;
+	overflow: hidden;
+
+	&.four { background-position: 0 0; }
+	&.rewind { background-position: 0 -40px; }
+	&.play { background-position: 0 -80px; }
+	&.forward { background-position: 0 -120px; }
+	&.notes { background-position: 0 -160px; }
+	&.male { background-position: 0 -250px; }
+	&.female { background-position: 0 -300px; }
+	&.none { background-position: 0 -350px; }
+	&.family { background-position: 0 -400px; }
+	&.alarm { background-position: 0 -440px; }
+	&.wallet { background-position: 0 -480px; }
+	&.plane { background-position: 0 -520px; }
+	&.heart { background-position: 0 -560px; }
+	&.golf { background-position: 0 -600px; }
+	&.check { background-position: 0 -320px; }
+	&.checked { background-position: 0 -360px; }
+	&.health { background-position: 0 -640px; }
+	&.anti-aging { background-position: 0 -680px; }
+	&.beauty { background-position: 0 -720px; }
+	&.wallet-round { background-position: 0 -760px; }
+	&.percent { background-position: 0 -800px; }
+	&.bank { background-position: 0 -840px; }
 }
 .intro {
 	height: 100%;
@@ -41,28 +89,10 @@ navigation {
 	height: 60px;
 }
 navigation .icon {
-	display: block;
-	width: 40px;
-	height: 30px;
-	overflow: hidden;
-	background-image: url('/img/icon_menu.png');
-	background-size: 100%;
-
 	&.home {
-		background-position: 0 0;
 		margin-right: 10px;
 	}
-	&.rewind {
-		background-position: 0 -30px;
-	}
-	&.play {
-		background-position: 0 -60px;
-	}
-	&.forward {
-		background-position: 0 -90px;
-	}
 	&.notes {
-		background-position: 0 -120px;
 		margin-left: 10px;
 	}
 }
@@ -156,7 +186,7 @@ subnavigation {
 	max-width: 853px;
 	margin: 0 auto 30px;
 }
-.select-narrator {
+.select-  {
 	text-align: center;
 }
 .select-narrator h4 {
@@ -169,20 +199,6 @@ subnavigation {
 	display: inline-block;
 	text-align: center;
 	margin: 0 15px;
-}
-.select-narrator i:before {
-	content: '';
-	background-image: url('../img/icon_narrator.gif');
-	background-size: 100%;
-	display: block;
-	width: 60px;
-	height: 60px;
-}
-.select-narrator .i-female:before  {
-	background-position: 0 120px;
-}
-.select-narrator .i-none:before {
-	background-position: 0 60px;
 }
 .home {
 	height: 100%;
@@ -306,7 +322,7 @@ subnavigation {
 	position: relative;
 }
 
-.hero-image:before {
+.hero-image.what-if:before {
 	content: '';
 	background: rgba(0,0,0,0.1);
 	position: absolute;
@@ -331,8 +347,39 @@ subnavigation {
 	background-image: url('/img/01-WhatIf.jpg');
 }
 
+.hero-image.what-if:before {
+	content: '';
+	background: rgba(0,0,0,0.1);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
 .hero-image.freedom {
 	background-image: url('/img/101031143.jpg');
+}
+
+.hero-image.products {
+	background-image: url('/img/02-Products.jpg');
+	background-size: cover;
+	background-color: #bababa;
+}
+
+.hero-image.samples {
+	background-image: url('/img/product_samples.jpg');
+	background-size: contain;
+}
+
+.hero-image.company {
+	background-image: url('/img/03-Company.jpg');
+	background-size: cover;
+}
+
+.hero-image.building {
+	background-image: url('/img/shutterstock_211959382.jpg');
+	background-size: cover;
 }
 
 .content-section {
@@ -367,44 +414,18 @@ subnavigation {
 	overflow: hidden;
 }
 
-.survey-question .icon {
+.survey-question .q-icon {
 	background: #f4f6fb;
 	flex: 0 0 auto;
 	border-right: 1px solid #fff;
 	margin-right: -1px;
 }
 
-.survey-question .icon i {
-	display: block;
-	margin: 10px;
-	background-image: url('/img/icon_survey.gif');
-	background-size: 100% auto;
-	width: 40px;
-	height: 40px;
-	overflow: hidden;
+.survey-question .q-icon {
 	align-self: center;
-
-	&.family {
-		background-position: 0 0;
-	}
-	&.alarm {
-		background-position: 0 -40px;
-	}
-	&.wallet {
-		background-position: 0 -80px;
-	}
-	&.plane {
-		background-position: 0 -120px;
-	}
-	&.heart {
-		background-position: 0 -160px;
-	}
-	&.golf {
-		background-position: 0 -200px;
-	}
 }
 
-.survey-question .label {
+.survey-question .q-label {
 	display: -webkit-flex;
 	display: flex;
 	flex: 1 1 auto;
@@ -412,37 +433,97 @@ subnavigation {
 	border-left: 1px solid #fff;
 }
 
-.survey-question .label span {
+.survey-question .q-label span {
 	align-self: center;
 	box-sizing: border-box;
 	padding: 0 10px;
 }
 
-.survey-question .check {
+.survey-question .q-check {
 	display: -webkit-flex;
 	display: flex;
 	flex: 0 0 auto;
 	margin-left: -1px;
 }
 
-.survey-question .check i {
-	display: block;
-	background-image: url('/img/icon_check.png');
-	background-size: 100% auto;
-	width: 40px;
-	height: 40px;
-	overflow: hidden;
+.survey-question .q-check i {
 	align-self: center;
-
-	&.checked {
-		background-position: 0 -40px;
-	}
 }
 
 .survey-question-inner > span {
 	display: block;
 	padding: 0 5px;
 	font-size: 18px;
+}
+
+.rating-question-inner {
+	text-align: left;
+}
+
+.rating {
+	display: -webkit-flex;
+	display: flex;
+	background-color: #edeff5;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.rating > div {
+	flex: 1 1 auto;
+	line-height: 45px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.rating .filled {
+	background-color: #1e81ba;
+	color: #fff;
+}
+
+.rating-question h3, .retirement-calculator h3 {
+	margin: 30px 0 15px;
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+}
+
+.rating-question .icon, .company .icon {
+	flex: 0 0 auto;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.retirement-calculator {
+	display: -webkit-flex;
+	display: flex;
+	align-items: stretch;
+}
+
+.retirement-calculator .layout-column {
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+}
+
+.retirement-calculator h3 {
+	text-transform: uppercase;
+	text-align: left;
+}
+
+.retirement-calculator button {
+	display: block;
+	margin: 5px;
+	background-color: #edeff5;
+	color: #000;
+	border: none;
+	line-height: 45px;
+	font-size: 20px;
+	font-family: 'Quicksand', Arial, sans-serif;
+
+	&.active {
+		background-color: #1e81ba;
+		color: #fff;
+	}
 }
 
 @media (max-width: 960px){

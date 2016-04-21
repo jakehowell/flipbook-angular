@@ -4,7 +4,7 @@
 	angular.module('flipBook')
 		.directive('navigation', function() {
 
-			NavigationCtrl.$inject = ['$rootScope', '$scope', '$element', '$attrs', '$state', 'ngAudio', 'IntroService', 'elapsedFilter'];
+			NavigationCtrl.$inject = ['$rootScope', '$scope', '$element', '$attrs', '$state', '$filter', 'ngAudio', 'IntroService', 'elapsedFilter', 'NoteService'];
 
 			return {
 				bindToController: true,
@@ -17,10 +17,11 @@
 				}
 			};
 
-			function NavigationCtrl($rootScope, $scope, $element, $attrs, $state, ngAudio, IntroService, elapsedFilter){
+			function NavigationCtrl($rootScope, $scope, $element, $attrs, $state, $filter, ngAudio, IntroService, elapsedFilter, NoteService){
 
 				$scope.narrator = IntroService.narrator;
 				$scope.audio = ngAudio.load($attrs.audio);
+				$scope.note = null;
 
 				console.log($scope.audio);
 
@@ -33,6 +34,7 @@
 					$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
 						$scope.audio.stop();
 					});
+					getNote();
 				}
 
 				function play(){
@@ -45,6 +47,14 @@
 
 				function pause(){
 					$scope.audio.pause();
+				}
+
+				function getNote(){
+					NoteService.get()
+						.then(function(response){
+							$scope.note = $filter('filter')(response.data, {page: $state.current.name}, true);
+							console.log($scope.note);
+						})
 				}
 			}
 		

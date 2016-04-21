@@ -8,9 +8,9 @@
         <div class="survey-questions wrapper">
             <div class="survey-question" ng-repeat="question in ctrl.questions track by $index" ng-click="ctrl.toggleChecked(question)">
                 <div class="survey-question-inner">
-                    <span class="icon"><i ng-class="question.icon"></i></span>
-                    <div class="label"><span>{{question.label}}</span></div>
-                    <span class="check"><i ng-class="{'checked' : question.checked}"></i></span>
+                    <span class="q-icon"><i class="icon icon-md" ng-class="question.icon"></i></span>
+                    <div class="q-label"><span>{{question.label}}</span></div>
+                    <span class="q-check"><i class="icon icon-md" ng-class="{'checked' : question.checked, 'check' : !question.checked}"></i></span>
                 </div>
             </div>
         </div>

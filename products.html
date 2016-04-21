@@ -1,1 +1,30 @@
+<navigation audio="audio/DigitalFlipchart-03-Products.mp3"></navigation>
+<div class="products">
+    <div class="hero-image products">
+        <h1>Products</h1>
+    </div>
+    <div class="content-section txt-center">
+        <h2>What kinds of products do you like?</h2>
+        <div class="rating-questions wrapper">
+            <div class="rating-question" ng-repeat="rating in ctrl.ratings track by $index">
+                <div class="rating-question-inner">
+                    <h3><i class="icon icon-md" ng-class="rating.icon"></i> {{rating.label}}</h3>
+                    <div class="rating">
+                        <div ng-class="{'filled' : rating.ratingLevel >= 1}" ng-click="ctrl.updateRating($index, 1)">A Little</div>
+                        <div ng-class="{'filled' : rating.ratingLevel >= 2}" ng-click="ctrl.updateRating($index, 2)">Like It</div>
+                        <div ng-class="{'filled' : rating.ratingLevel == 3}" ng-click="ctrl.updateRating($index, 3)">Love It</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-image samples">
+    </div>
+    <div class="content-section txt-center">
+        <div class="wrapper">
+            <h2>What we can offer</h2>
+            <p>We all have our favorites. We all have things that we need and things that we use. Which ones resonate with you? We can offer you that and more.</p>
+        </div>
+    </div>
+</div>
 <subnavigation></subnavigation>

@@ -1,1 +1,37 @@
+<navigation audio="audio/DigitalFlipchart-02-Company.mp3"></navigation>
+<div class="company">
+    <div class="hero-image company">
+        <h1>Company</h1>
+    </div>
+    <div class="content-section txt-center">
+        <h2>What it takes to retire with a traditional job</h2>
+        <div class="wrapper">
+            <p>How can we start preparing now for a better future? You save a little here and there but how much do we really need to be putting away?</p>
+            <div class="retirement-calculator">
+                <div class="layout-column">
+                    <h3><i class="icon icon-md wallet-round"></i><span><strong>I Want</strong> to Earn</span></h3>
+                    <button ng-repeat="earnings in earningsTable track by $index" ng-class="{'active' : earnings.amount == calcEarn}" ng-click="updateEarnings(earnings.amount)">{{earnings.label}}</button>
+                </div>
+                <div class="layout-column">
+                    <h3><i class="icon icon-md percent"></i><strong>Interest Rate</strong></h3>
+                    <button ng-repeat="interest in interestTable track by $index" ng-class="{'active' : interest.amount == calcInterest}" ng-click="updateInterest(interest.amount)">{{interest.label}}</button>
+                </div>
+                <div class="layout-column">
+                    <h3><i class="icon icon-md bank"></i><span><strong>I Need</strong> in the Bank</span></h3>
+                    <div class="in-the-bank">
+                        {{bank}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-image building">
+    </div>
+    <div class="content-section txt-center">
+        <div class="wrapper">
+            <h2>What we can offer</h2>
+            <p>We all have our favorites. We all have things that we need and things that we use. Which ones resonate with you? We can offer you that and more.</p>
+        </div>
+    </div>
+</div>
 <subnavigation></subnavigation>
