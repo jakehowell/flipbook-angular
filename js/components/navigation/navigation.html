@@ -1,16 +1,24 @@
 <div class="main-navigation">
     <span class="home-link" ui-sref="home">
-        <i class="icon icon-md four"></i>
+        <i class="icon four"></i>
         Home
     </span>
     <span class="audio-controls">
-        <i class="icon icon-md rewind"></i>
-        <i class="icon icon-md play"></i>
-        <i class="icon icon-md forward"></i>
+        <span ng-click="rewind()"><i class="icon rewind"></i></span>
+        <span ng-hide="playing" ng-click="play()"><i class="icon play"></i></span>
+        <span ng-show="playing" ng-click="pause()"><i class="icon pause"></i></span>
+        <span ng-click="forward()"><i class="icon forward"></i></span>
         <span class="track-time">{{ audio.currentTime | elapsed }}</span>
     </span>
     <span class="notes-link">
         Notes
-        <i class="icon icon-md notes" ng-click="toggleNote(note)"></i>
+        <i class="icon notes" ng-click="toggleNote()"></i>
     </span>
+</div>
+<div class="note-overlay" ng-show="showNote">
+    <span class="note-overlay-close" ng-click="toggleNote()"><i class="icon icon-lg x"></i></span>
+    <div class="note-overlay-inner">
+        <h2>{{note.title}}</h2>
+        <div ng-bind-html="note.text"></div>
+    </div>
 </div>

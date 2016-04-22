@@ -1,11 +1,23 @@
 <div class="intro">
 	<div class="intro-content">
-		<img class="intro-logo" src="img/ardrops_logo.gif">
+		<img width="420" class="intro-logo" src="img/ardrops_logo.gif">
 		<div class="select-narrator">
 			<h4>Select Your Narrator:</h4>
-			<i class="icon icon-lg male" ng-click="ctrl.selectNarrator('male')">Male</i>
-			<i class="icon icon-lg female" ng-click="ctrl.selectNarrator('female')">Female</i>
-			<i class="icon icon-lg none" ng-click="ctrl.selectNarrator('none')">None</i>
+        <div class="layout-row">
+          <span class="layout-column">
+            <i class="icon male" ng-click="ctrl.selectNarrator('male')"></i>
+            <h5>Male</h5>
+          </span>
+          <span class="layout-column">
+            <i class="icon female" ng-click="ctrl.selectNarrator('female')"></i>
+            <h5>Female</h5>
+          </span>
+          <span class="layout-column">
+            <i class="icon none" ng-click="ctrl.selectNarrator('none')"></i>
+            <h5>None</h5>
+          </span>
+        </div>
+      </div>
 		</div>
 	</div>
 </div>

@@ -1,6 +1,6 @@
 <navigation audio="audio/DigitalFlipchart-01-WhatIf.mp3"></navigation>
 <div class="what-if">
-    <div class="hero-image what-if">
+    <div class="title-image what-if">
         <h1>What If?</h1>
     </div>
     <div class="content-section txt-center">
@@ -8,9 +8,9 @@
         <div class="survey-questions wrapper">
             <div class="survey-question" ng-repeat="question in ctrl.questions track by $index" ng-click="ctrl.toggleChecked(question)">
                 <div class="survey-question-inner">
-                    <span class="q-icon"><i class="icon icon-md" ng-class="question.icon"></i></span>
+                    <span class="q-icon"><i class="icon" ng-class="question.icon"></i></span>
                     <div class="q-label"><span>{{question.label}}</span></div>
-                    <span class="q-check"><i class="icon icon-md" ng-class="{'checked' : question.checked, 'check' : !question.checked}"></i></span>
+                    <span class="q-check"><i class="icon" ng-class="{'checked' : question.checked, 'check' : !question.checked}"></i></span>
                 </div>
             </div>
         </div>

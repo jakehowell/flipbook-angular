@@ -5,21 +5,23 @@
     </div>
     <div class="content-section txt-center">
         <h2>What it takes to retire with a traditional job</h2>
-        <div class="wrapper">
+        <div class="calculator wrapper">
             <p>How can we start preparing now for a better future? You save a little here and there but how much do we really need to be putting away?</p>
-            <div class="retirement-calculator">
+            <div class="calculator-labels layout-row">
+                <h3 class="layout-row"><i class="icon icon-md wallet-round"></i><span><strong>I Want</strong> to Earn</span></h3>
+                <h3 class="layout-row"><i class="icon icon-md percent"></i><strong>Interest Rate</strong></h3>
+                <h3 class="layout-row"><i class="icon icon-md bank"></i><span><strong>I Need</strong> in the Bank</span></h3>
+            </div>
+            <div class="retirement-calculator layout-row">
                 <div class="layout-column">
-                    <h3><i class="icon icon-md wallet-round"></i><span><strong>I Want</strong> to Earn</span></h3>
                     <button ng-repeat="earnings in earningsTable track by $index" ng-class="{'active' : earnings.amount == calcEarn}" ng-click="updateEarnings(earnings.amount)">{{earnings.label}}</button>
                 </div>
                 <div class="layout-column">
-                    <h3><i class="icon icon-md percent"></i><strong>Interest Rate</strong></h3>
                     <button ng-repeat="interest in interestTable track by $index" ng-class="{'active' : interest.amount == calcInterest}" ng-click="updateInterest(interest.amount)">{{interest.label}}</button>
                 </div>
                 <div class="layout-column">
-                    <h3><i class="icon icon-md bank"></i><span><strong>I Need</strong> in the Bank</span></h3>
                     <div class="in-the-bank">
-                        {{bank}}
+                        {{bank | currency}}
                     </div>
                 </div>
             </div>

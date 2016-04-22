@@ -1,2 +1,25 @@
 <navigation audio="audio/DigitalFlipchart-04-Opportunity.mp3"></navigation>
+<div class="opportunity">
+    <div class="hero-image opportunity">
+        <h1>Opportunity</h1>
+    </div>
+    <div class="content-section txt-center">
+        <div class="wrapper">
+            <h2>Explore the opportunity of a lifetime</h2>
+            <img width="480" src="/img/profile_badge.png">
+            <h3>We believe in this enough that we want to share it with you because we care about you. If you’re interested let us know so you can learn more.</h3>
+            <form class="contact-form layout-column" ng-submit="ctrl.handleSubmit()" ng-hide="ctrl.formSuccess">
+                <input type="text" placeholder="First Name" ng-model="ctrl.contactForm.firstName">
+                <input type="text" placeholder="Last Name" ng-model="ctrl.contactForm.lastName">
+                <input type="email" placeholder="Email Address" ng-model="ctrl.contactForm.email">
+                <input type="text" placeholder="Phone Number" ng-model="ctrl.contactForm.phone">
+                <button class="submit-button">Contact Me</button>
+            </form>
+            <div class="success-message" ng-show="ctrl.formSuccess">
+                <h1><em>Success!</em></h1>
+                <h3>We'll get in touch soon to discuss your awesome future!</h3>
+            </div>
+        </div>
+    </div>
+</div>
 <subnavigation></subnavigation>

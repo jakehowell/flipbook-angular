@@ -12,6 +12,9 @@
 
 			scope.narrator = IntroService.narrator;
 			scope.go = $state.go;
+			scope.handleSubmit = handleSubmit;
+			scope.contactForm = {};
+			scope.formSuccess = false;
 
 			activate();
 
@@ -19,6 +22,11 @@
 				if(!scope.narrator){
 					$state.go('intro');
 				}
+			}
+
+			function handleSubmit(){
+				console.log(scope.contactForm);
+				scope.formSuccess = true;
 			}
 
 		};
