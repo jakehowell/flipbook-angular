@@ -293,6 +293,40 @@ subnavigation {
 .survey-question .icon.checked {
   background-position: 0 -350px;
 }
+.rating-question .icon {
+  width: 40px;
+  height: 40px;
+  background-image: url(/img/icon_product-company.png);
+}
+.rating-question .icon.health {
+  background-position: 0 0;
+}
+.rating-question .icon.anti-aging {
+  background-position: 0 -40px;
+}
+.rating-question .icon.beauty {
+  background-position: 0 -80px;
+}
+.calculator-labels .icon {
+  width: 40px;
+  height: 40px;
+  background-image: url(/img/icon_product-company.png);
+}
+.calculator-labels .icon.earn {
+  background-position: 0 -120px;
+}
+.calculator-labels .icon.interest-rate {
+  background-position: 0 -160px;
+}
+.calculator-labels .icon.bank {
+  background-position: 0 -200px;
+}
+.note-overlay .icon.x {
+  width: 50px;
+  height: 50px;
+  background-image: url(/img/icon_x.png);
+  background-position: 0 0;
+}
 .select-narrator .layout-row {
   align-items: center;
   justify-content: center;
@@ -401,6 +435,9 @@ subnavigation {
 .title-image {
   height: 320px;
 }
+.hero-image {
+  height: 400px;
+}
 .title-image,
 .hero-image {
   width: 100%;
@@ -448,7 +485,7 @@ subnavigation {
 .hero-image.freedom {
   background-image: url('/img/101031143.jpg');
 }
-.hero-image.products {
+.title-image.products {
   background-image: url('/img/02-Products.jpg');
   background-size: cover;
   background-color: #bababa;
@@ -457,17 +494,15 @@ subnavigation {
   background-image: url('/img/product_samples.jpg');
   background-size: contain;
 }
-.hero-image.company {
+.title-image.company {
   background-image: url('/img/03-Company.jpg');
-  background-size: cover;
 }
 .hero-image.building {
   background-image: url('/img/shutterstock_211959382.jpg');
   background-size: cover;
 }
-.hero-image.opportunity {
+.title-image.opportunity {
   background-image: url('/img/04-Opportunity.jpg');
-  background-size: cover;
 }
 .content-section {
   padding: 45px 0;
