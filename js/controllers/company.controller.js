@@ -4,11 +4,11 @@
 	angular.module('flipBook')
 		.controller('CompanyController', CompanyController);
 
-		CompanyController.$inject = ['$scope', '$state', 'IntroService']
+		CompanyController.$inject = ['$scope', '$state', 'NarratorService']
 
-		function CompanyController ($scope, $state, IntroService){
+		function CompanyController ($scope, $state, NarratorService){
 
-			$scope.narrator = IntroService.narrator;
+			$scope.narrator = NarratorService.narrator;
 			$scope.go = $state.go;
 			$scope.calcEarn = 1000;
 			$scope.calcInterest = .02;

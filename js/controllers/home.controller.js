@@ -4,13 +4,13 @@
 	angular.module('flipBook')
 		.controller('HomeController', HomeController);
 
-		HomeController.$inject = ['$scope', '$state', 'IntroService']
+		HomeController.$inject = ['$scope', '$state', 'NarratorService']
 
-		function HomeController ($scope, $state, IntroService){
+		function HomeController ($scope, $state, NarratorService){
 
 			var scope = this;
 
-			scope.narrator = IntroService.narrator;
+			scope.narrator = NarratorService.narrator;
 			scope.go = $state.go;
 
 			activate();

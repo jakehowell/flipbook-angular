@@ -73,12 +73,15 @@ navigation .icon {
 	}
 }
 navigation .audio-controls {
-	display: -webkit-flex;
-	display: flex;
 	flex: 1 1 auto;
 	justify-content: center;
 }
-.audio-controls > span {
+navigation .audio-controls .playback {
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+}
+.audio-controls .playback > span {
 	width: 48px;
 	height: 48px;
 	display: -webkit-flex;
@@ -225,6 +228,47 @@ subnavigation {
 	background-repeat: no-repeat;
 	overflow: hidden;
 }
+.change-narrator {
+	position: relative;
+	margin-left: -20px;
+}
+.narrator-dropdown {
+	position: absolute;
+	top: 40px;
+	left: -15px;
+	background: rgba(240,240,240,0.85);
+	border-radius: 5px;
+	padding: 5px 0;
+	&:before {
+		content: '';
+		position: absolute;
+		top: -15px;
+		left: 10px;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 15px 15px 15px;
+		border-color: transparent transparent rgba(240,240,240,0.85) transparent;
+	}
+	.narrator-option {
+		white-space: nowrap;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 300;
+		align-items: center;
+		padding: 5px 10px;
+		cursor: pointer;
+		&:nth-child(2){
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+		}
+		&:hover {
+			color: #1e81ba;
+		}
+	}
+	.icon {
+		margin-right: 5px;
+	}
+}
 .select-narrator .icon {
 	width: 78px;
 	height: 78px;
@@ -240,6 +284,22 @@ subnavigation {
 		background-position: 0 -156px;
 	}
 }
+.active-narrator .icon,
+.narrator-option .icon {
+	width: 20px;
+	height: 20px;
+	background-image: url(/img/narrators.png);
+
+	&.male {
+		background-position: 0 0;
+	}
+	&.female {
+		background-position: 0 -20px;
+	}
+	&.none {
+		background-position: 0 -40px;
+	}
+}
 .icon.four {
 	width: 23px;
 	height: 23px;
@@ -250,7 +310,7 @@ subnavigation {
 	height: 23px;
 	background-image: url(/img/icon_notes.png);
 }
-.audio-controls .icon {
+.audio-controls .playback .icon {
 	background-image: url(/img/audio_controls.png);
 	width: 20px;
 	height: 16px;
@@ -277,7 +337,7 @@ subnavigation {
 		background-position: 0 0;
 	}
 	&.alarm {
-		background-positoin: 0 -50px;
+		background-position: 0 -50px;
 	}
 	&.wallet {
 		background-position: 0 -100px;
@@ -314,18 +374,18 @@ subnavigation {
 	}
 }
 .calculator-labels .icon {
-	width: 40px;
-	height: 40px;
+	width: 35px;
+	height: 35px;
 	background-image: url(/img/icon_product-company.png);
 
 	&.earn {
-		background-position: 0 -120px;
+		background-position: 0 -105px;
 	}
 	&.interest-rate {
-		background-position: 0 -160px;
+		background-position: 0 -140px;
 	}
 	&.bank {
-		background-position: 0 -200px;
+		background-position: 0 -175px;
 	}
 }
 .note-overlay .icon.x {
@@ -404,7 +464,6 @@ subnavigation {
 	flex: 1;
 	align-self: center;
 	text-align: center;
-	max-width: 70%;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -412,7 +471,7 @@ subnavigation {
 .home .nav-box-inner h1 {
 	margin: 0 0 15px;
 	text-transform: uppercase;
-	letter-spacing: 0.075em;
+	letter-spacing: 0.05em;
 }
 
 .home .nav-box-inner h4 {
@@ -455,18 +514,52 @@ subnavigation {
 	box-shadow: inset 1px 1px 0 -0.5px #fff;
 	background-image: url(/img/num_4.png);
 }
+.title-image .banner-video, .title-image .text {
+	display: -webkit-flex;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+.banner-video .video {
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: auto;
+	z-index: 1;
+	flex: 1 1 100%;
+}
+@media (max-width: 570px){
+	.banner-video .video {
+		width: auto;
+		height: 100%;
+	}
+}
 .title-image {
+	width: 100%;
 	height: 320px;
+	overflow: hidden;
+	position: relative;
+}
+.title-image .text {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
 }
 .hero-image {
 	height: 400px;
 }
-.title-image, .hero-image {
+.hero-image {
 	width: 100%;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	overflow: auto;
+	overflow: hidden;
 	display: webkit-flex;
 	display: flex;
 	align-items: center;
@@ -493,6 +586,7 @@ subnavigation {
 	flex: 1;
 	align-self: center;
 	text-shadow: 0px 0px 3px rgba(0,0,0,0.8);
+	z-index: 2;
 }
 
 .title-image.what-if {

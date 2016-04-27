@@ -4,11 +4,19 @@
         Home
     </span>
     <span class="audio-controls">
-        <span ng-click="rewind()"><i class="icon rewind"></i></span>
-        <span ng-hide="playing" ng-click="play()"><i class="icon play"></i></span>
-        <span ng-show="playing" ng-click="pause()"><i class="icon pause"></i></span>
-        <span ng-click="forward()"><i class="icon forward"></i></span>
-        <span class="track-time">{{ audio.currentTime | elapsed }}</span>
+        <div class="change-narrator" ng-click="toggleDropdown()">
+            <span class="active-narrator"><i class="icon active-narrator" ng-class="narrator || 'none'"></i></span>
+            <div class="narrator-dropdown layout-column" ng-show="showNarratorDropdown">
+                <div class="narrator-option layout-row" ng-click="changeNarrator(narrator.value)" ng-repeat="narrator in narrators"><i class="icon" ng-class="narrator.icon"></i><span>{{narrator.name}}</span></div>
+            </div>
+        </div>
+        <div class="playback">
+            <span ng-click="rewind()"><i class="icon rewind"></i></span>
+            <span ng-hide="playing" ng-click="play()"><i class="icon play"></i></span>
+            <span ng-show="playing" ng-click="pause()"><i class="icon pause"></i></span>
+            <span ng-click="forward()"><i class="icon forward"></i></span>
+            <span class="track-time">{{ audio.currentTime | elapsed }}</span>
+        </div>
     </span>
     <span class="notes-link">
         Notes

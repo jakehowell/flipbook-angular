@@ -4,13 +4,13 @@
 	angular.module('flipBook')
 		.controller('ProductsController', ProductsController);
 
-		ProductsController.$inject = ['$scope', '$state', 'IntroService']
+		ProductsController.$inject = ['$scope', '$state', 'NarratorService']
 
-		function ProductsController ($scope, $state, IntroService){
+		function ProductsController ($scope, $state, NarratorService){
 
 			var scope = this;
 
-			scope.narrator = IntroService.narrator;
+			scope.narrator = NarratorService.narrator;
 			scope.go = $state.go;
 			scope.updateRating = updateRating;
 

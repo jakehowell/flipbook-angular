@@ -4,13 +4,13 @@
 	angular.module('flipBook')
 		.controller('OpportunityController', OpportunityController);
 
-		OpportunityController.$inject = ['$scope', '$state', 'IntroService']
+		OpportunityController.$inject = ['$scope', '$state', 'NarratorService']
 
-		function OpportunityController ($scope, $state, IntroService){
+		function OpportunityController ($scope, $state, NarratorService){
 
 			var scope = this;
 
-			scope.narrator = IntroService.narrator;
+			scope.narrator = NarratorService.narrator;
 			scope.go = $state.go;
 			scope.handleSubmit = handleSubmit;
 			scope.contactForm = {};
