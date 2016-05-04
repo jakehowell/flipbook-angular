@@ -8,13 +8,11 @@
 
 		function ProductsController ($scope, $state, NarratorService){
 
-			var scope = this;
+			$scope.narrator = NarratorService.narrator;
+			$scope.go = $state.go;
+			$scope.updateRating = updateRating;
 
-			scope.narrator = NarratorService.narrator;
-			scope.go = $state.go;
-			scope.updateRating = updateRating;
-
-			scope.ratings = [
+			$scope.ratings = [
 				{
 					icon: 'health',
 					label: 'Health & Wellness Products',
@@ -35,13 +33,10 @@
 			activate();
 
 			function activate(){
-				if(!scope.narrator){
-					$state.go('intro');
-				}
 			}
 
 			function updateRating(index, rating){
-				return scope.ratings[index].ratingLevel = rating;
+				return $scope.ratings[index].ratingLevel = rating;
 			}
 
 		};

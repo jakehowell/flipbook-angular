@@ -1,5 +1,9 @@
-<div class="subnav">
-	<span class="item" ng-repeat="item in subNav" ng-class="{'current' : item.current}" ui-sref="{{item.state}}">
-		<img ng-src="{{item.thumb}}">
-	</span>
+<i class="icon pager-prev" ng-hide="{{firstPage}}" ng-click="goToPrev()"></i>
+<i class="icon pager-next" ng-hide="{{lastPage}}" ng-click="goToNext()"></i>
+<div class="subnavigation" ng-class="{'hidden' : scrolling}">
+	<div class="nav">
+		<span class="item" ng-repeat="item in pages" ng-class="{'current' : item.current}" ui-sref="{{item.page}}">
+			<img ng-src="{{item.thumb}}">
+		</span>
+	</div>
 </div>

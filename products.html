@@ -1,12 +1,8 @@
 <navigation></navigation>
-<div class="products">
+<div class="products page-content" ng-swipe-right="go('whatIf')" ng-swipe-left="go('company')">
     <div class="title-image products">
         <div class="banner-video">
-            <video class="video" autoplay loop>
-                <source src="/video/02-Products.mp4" type="video/mp4">
-                <source src="/video/02-Products.oggtheora.ogv" type="video/ogg">
-                <source src="/video/02-Products.webmhd.webm" type="video/webm">
-            </video>
+            <canvid name="products-video" src="video/Products.jpg" frames="100" cols="6">
         </div>
         <div class="text">
             <h1>Products</h1>
@@ -15,13 +11,13 @@
     <div class="content-section txt-center">
         <h2>What kinds of products do you like?</h2>
         <div class="rating-questions wrapper">
-            <div class="rating-question" ng-repeat="rating in ctrl.ratings track by $index">
+            <div class="rating-question" ng-repeat="rating in ratings track by $index">
                 <div class="rating-question-inner">
                     <h3><i class="icon icon-md" ng-class="rating.icon"></i> {{rating.label}}</h3>
                     <div class="rating">
-                        <div ng-class="{'filled' : rating.ratingLevel >= 1}" ng-click="ctrl.updateRating($index, 1)">A Little</div>
-                        <div ng-class="{'filled' : rating.ratingLevel >= 2}" ng-click="ctrl.updateRating($index, 2)">Like It</div>
-                        <div ng-class="{'filled' : rating.ratingLevel == 3}" ng-click="ctrl.updateRating($index, 3)">Love It</div>
+                        <div ng-class="{'filled' : rating.ratingLevel >= 1}" ng-click="updateRating($index, 1)">A Little</div>
+                        <div ng-class="{'filled' : rating.ratingLevel >= 2}" ng-click="updateRating($index, 2)">Like It</div>
+                        <div ng-class="{'filled' : rating.ratingLevel == 3}" ng-click="updateRating($index, 3)">Love It</div>
                     </div>
                 </div>
             </div>

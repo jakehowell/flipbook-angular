@@ -48,9 +48,6 @@
 			activate();
 
 			function activate(){
-				if(!$scope.narrator){
-					$state.go('intro');
-				}
 				$scope.$watchGroup(['calcEarn', 'calcInterest'], function(newValues, oldValues){
 					calcRetirement();
 				});

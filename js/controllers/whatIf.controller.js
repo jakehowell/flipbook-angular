@@ -4,16 +4,14 @@
     angular.module('flipBook')
         .controller('WhatIfController', WhatIfController);
 
-        WhatIfController.$inject = ['$scope', '$state', 'NarratorService']
+        WhatIfController.$inject = ['$scope', '$state', 'NarratorService'];
 
         function WhatIfController ($scope, $state, NarratorService){
 
-            var scope = this;
-
-            scope.narrator = NarratorService.narrator;
-            scope.go = $state.go;
-            scope.toggleChecked = toggleChecked;
-            scope.questions = [
+            $scope.narrator = NarratorService.narrator;
+            $scope.go = $state.go;
+            $scope.toggleChecked = toggleChecked;
+            $scope.questions = [
                 {
                     checked: false,
                     label: 'Spend more time with my family',
@@ -49,9 +47,6 @@
             activate();
 
             function activate(){
-                if(!scope.narrator){
-                    $state.go('intro');
-                }
             }
 
             function toggleChecked(index){

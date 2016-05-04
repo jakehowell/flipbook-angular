@@ -4,34 +4,44 @@
 	angular.module('flipBook.services')
 		.factory('NarratorService', NarratorService);
 
-		function NarratorService(){
+		NarratorService.$inject = ['ngAudio']
+
+		function NarratorService(ngAudio){
 			var service;
 
 			service = {
-				narrator : 'male',
-				audio: {
-					intro: false,
-					home: false,
-					whatIf: {
-						male: '/audio/what-if_male.mp3',
-						female: '/audio/what-if_female.mp3',
-						none: ''
+				narrator : false,
+				tracks: {
+					male: {
+						intro: '',
+						home: '',
+						whatIf: '/audio/what-if_male.mp3',
+						products: '/audio/products_male.mp3',
+						company: '/audio/company_male.mp3',
+						opportunity: '/audio/opportunity_male.mp3'
 					},
-					products: {
-						male: '/audio/products_male.mp3',
-						female: '/audio/products_female.mp3',
-						none: ''
+					female: {
+						intro: '',
+						home: '',
+						whatIf: '/audio/what-if_male.mp3',
+						products: '/audio/products_male.mp3',
+						company: '/audio/company_male.mp3',
+						opportunity: '/audio/opportunity_male.mp3'
 					},
-					company: {
-						male: '/audio/company_male.mp3',
-						female: '/audio/products_female.mp3',
-						none: ''
-					},
-					opportunity: {
-						male: '/audio/opportunity_male.mp3',
-						female: '/audio/opportunity_female.mp3',
-						none: ''
+					none: {
+						intro: '',
+						home: '',
+						whatIf: '',
+						products: '',
+						company: ''
 					}
+				},
+				loaded: {},
+				load: function(selection){
+					angular.forEach(service.tracks[selection], function(value, key){
+						var loaded = ngAudio.load(value);
+						service.loaded[key] = loaded;
+					});
 				}
 			}
 

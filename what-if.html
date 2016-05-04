@@ -1,12 +1,8 @@
 <navigation></navigation>
-<div class="what-if">
+<div class="what-if page-content" ng-swipe-left="go('products')">
     <div class="title-image what-if">
         <div class="banner-video">
-            <video class="video" autoplay loop>
-                <source src="/video/01-WhatIf.mp4" type="video/mp4">
-                <source src="/video/01-Whatif.oggtheora.ogv" type="video/ogg">
-                <source src="/video/01-WhatIf.webmhd.webm" type="video/webm">
-            </video>
+            <canvid name="what-if-video" src="video/WhatIf.jpg" frames="143" cols="6">
         </div>
         <div class="text">
             <h1>What If?</h1>
@@ -15,7 +11,7 @@
     <div class="content-section txt-center">
         <h2>What would you do if you had more time?</h2>
         <div class="survey-questions wrapper">
-            <div class="survey-question" ng-repeat="question in ctrl.questions track by $index" ng-click="ctrl.toggleChecked(question)">
+            <div class="survey-question" ng-repeat="question in questions track by $index" ng-click="toggleChecked(question)">
                 <div class="survey-question-inner">
                     <span class="q-icon"><i class="icon" ng-class="question.icon"></i></span>
                     <div class="q-label"><span>{{question.label}}</span></div>

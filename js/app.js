@@ -5,7 +5,8 @@
 
 		'flipBook.config',
 		'flipBook.services',
-
+		
+		'ngTouch',
         'ngAudio'
 
 		]);

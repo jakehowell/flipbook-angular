@@ -8,10 +8,8 @@
 
 		function IntroController ($scope, $state, NarratorService){
 
-			var scope = this;
-
-			scope.narrator = NarratorService.narrator;
-			scope.selectNarrator = selectNarrator;
+			$scope.narrator = NarratorService.narrator;
+			$scope.selectNarrator = selectNarrator;
 
 			activate();
 
@@ -20,6 +18,7 @@
 
 			function selectNarrator(narrator){
 				NarratorService.narrator = narrator;
+				NarratorService.load(narrator);
 				$state.go('home');
 			}
 

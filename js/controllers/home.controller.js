@@ -8,17 +8,12 @@
 
 		function HomeController ($scope, $state, NarratorService){
 
-			var scope = this;
-
-			scope.narrator = NarratorService.narrator;
-			scope.go = $state.go;
+			$scope.narrator = NarratorService.narrator;
+			$scope.go = $state.go;
 
 			activate();
 
 			function activate(){
-				if(!scope.narrator){
-					$state.go('intro');
-				}
 			}
 
 		};

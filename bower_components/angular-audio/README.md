@@ -2,7 +2,8 @@ NG-AUDIO
 ===
 
 The Angular Audio Module
-------
+
+Installation: `bower install angular-audio`
 
 Development Instructions
 ------
@@ -19,6 +20,10 @@ Total awesomeness for playing sounds. Project page here:
 
 ##[Angular Audio Project Page](http://danielstern.github.io/ngAudio/)
 ##[Angular Audio Documentation](http://danielstern.github.io/ngAudio/#/docs)
+
+Release Notes v1.7.2
+
+- Updated Angular dependency to support 1.5.x
 
 Release Notes v1.7.1
 
